@@ -6,6 +6,28 @@ export interface TokenInfo {
   readonly name: string;
   readonly decimals: number;
   readonly symbol: string;
+  readonly priceOracleAddress?: string;
+  readonly logoURI?: string;
+  readonly tags?: string[];
+  readonly extensions?: {
+    readonly [key: string]:
+      | {
+          [key: string]:
+            | {
+                [key: string]: ExtensionValue;
+              }
+            | ExtensionValue;
+        }
+      | ExtensionValue;
+  };
+}
+
+export interface PairInfo {
+  readonly base: TokenInfo;
+  readonly quote: TokenInfo;
+  readonly decimals: number;
+  readonly priceOracleAddress: string;
+  readonly name?: string;
   readonly logoURI?: string;
   readonly tags?: string[];
   readonly extensions?: {
@@ -34,10 +56,11 @@ export interface Tags {
   };
 }
 
-export interface TokenList {
+export interface PairList {
   readonly name: string;
   readonly timestamp: string;
   readonly version: Version;
+  readonly pairs: PairInfo[];
   readonly tokens: TokenInfo[];
   readonly keywords?: string[];
   readonly tags?: Tags;
