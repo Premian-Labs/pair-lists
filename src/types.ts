@@ -6,7 +6,6 @@ export interface TokenInfo {
   readonly name: string;
   readonly decimals: number;
   readonly symbol: string;
-  readonly priceOracleAddress?: string;
   readonly logoURI?: string;
   readonly tags?: string[];
   readonly extensions?: {

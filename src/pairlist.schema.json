@@ -222,12 +222,6 @@
           ],
           "examples": ["USDC"]
         },
-        "priceOracleAddress": {
-          "type": "string",
-          "description": "The checksummed address of the token price oracle on the specified chain ID",
-          "pattern": "^0x[a-fA-F0-9]{40}$",
-          "examples": ["0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419"]
-        },
         "logoURI": {
           "type": "string",
           "description": "A URI to the token logo asset; if not set, interface will attempt to find a logo based on the token address; suggest SVG or PNG of size 64x64",
@@ -247,14 +241,7 @@
           "$ref": "#/definitions/ExtensionMap"
         }
       },
-      "required": [
-        "chainId",
-        "address",
-        "decimals",
-        "name",
-        "symbol",
-        "priceOracleAddress"
-      ]
+      "required": ["chainId", "address", "decimals", "name", "symbol"]
     },
     "PairInfo": {
       "type": "object",
