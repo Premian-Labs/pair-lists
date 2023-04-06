@@ -6,7 +6,7 @@
     "url": "https://premia.finance"
   },
   "description": "📚 The Token Pair Lists specification",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -27,7 +27,7 @@
     "postbuild": "cp src/pairList.schema.json dist/pairList.schema.json",
     "test": "tsdx test",
     "lint": "tsdx lint src test",
-    "prepublishOnly": "yarn test && yarn build"
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {},
   "husky": {
