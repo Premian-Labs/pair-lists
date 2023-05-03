@@ -1,5 +1,12 @@
 type ExtensionValue = string | number | boolean | null | undefined;
 
+export enum AdapterType {
+  None = 'None',
+  Chainlink = 'Chainlink',
+  UniswapV3 = 'UniswapV3',
+  Custom = 'Custom',
+}
+
 export interface TokenInfo {
   readonly chainId: number;
   readonly address: string;
@@ -23,7 +30,9 @@ export interface TokenInfo {
 
 export interface PairInfo {
   readonly base: TokenInfo;
+  readonly baseAdapterType: string;
   readonly quote: TokenInfo;
+  readonly quoteAdapterType: string;
   readonly decimals: number;
   readonly priceOracleAddress: string;
   readonly name?: string;
