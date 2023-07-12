@@ -121,19 +121,19 @@ describe('schema', () => {
     checkSchema(crossChainExtensions, true);
   });
 
-  it('allows up to 10k tokens', () => {
-    const exampleListWith10kTokens = {
+  it('allows up to 2k tokens', () => {
+    const exampleListWith2kTokens = {
       ...exampleList,
-      tokens: [...Array(10000)].map(() => exampleList.tokens[0]),
+      tokens: [...Array(2000)].map(() => exampleList.tokens[0]),
     };
-    checkSchema(exampleListWith10kTokens, true);
+    checkSchema(exampleListWith2kTokens, true);
   });
 
-  it('fails with 10001 tokens', () => {
-    const exampleListWith10kTokensPlusOne = {
+  it('fails with 2001 tokens', () => {
+    const exampleListWith2kTokensPlusOne = {
       ...exampleList,
-      tokens: [...Array(10001)].map(() => exampleList.tokens[0]),
+      tokens: [...Array(2001)].map(() => exampleList.tokens[0]),
     };
-    checkSchema(exampleListWith10kTokensPlusOne, false);
+    checkSchema(exampleListWith2kTokensPlusOne, false);
   });
 });

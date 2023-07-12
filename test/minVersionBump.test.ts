@@ -5,7 +5,6 @@ const tokenA: TokenInfo = {
   logoURI: 'ipfs://test',
   symbol: 'abcd',
   name: 'token a',
-  priceOracleAddress: '0x0a',
   decimals: 18,
   tags: ['hello', 'world'],
 };
