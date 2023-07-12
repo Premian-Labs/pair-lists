@@ -9,7 +9,7 @@ The JSON schema represents the technical specification for a token list which ca
 
 ## What are token lists?
 
-Premia Pair Lists is a specification, based on [Uniswap Token Lists](https://github.com/Uniswap/token-lists), for lists of token pair metadata (e.g. base, quote, baseOracle, quoteOracle, ...) that can be used by any dApp interfaces that needs one or more lists of oracle-dependent token pairs.
+Premia Pair Lists is a specification, based on [Uniswap Token Lists](https://github.com/Uniswap/token-lists), for lists of token pair metadata (e.g. base token, quote token, price feed, etc.) that can be used by any dApp interfaces that needs one or more lists of oracle-dependent token pairs.
 
 Anyone can create and maintain a pair list, as long as they follow the specification.
 
@@ -18,7 +18,7 @@ Specifically an instance of a pair list is a [JSON](https://www.json.org/json-en
 Pair list JSON must validate against the [JSON schema](https://json-schema.org/) in order to be used in the Premia Interface.
 Pairs on pair lists, and pair lists themselves, are tagged so that users can easily find token pairs.
 
-## JSON Schema $id
+## JSON Schema \$id
 
 The JSON schema ID is [https://premia.finance/pairlist.schema.json](https://premia.finance/pairlist.schema.json)
 
@@ -47,14 +47,16 @@ async function validate() {
     return valid;
   }
   if (validator.errors) {
-    throw validator.errors.map((error) => {
+    throw validator.errors.map(error => {
       delete error.data;
       return error;
     });
   }
 }
 
-validate().then(console.log('Valid List.')).catch(console.error);
+validate()
+  .then(console.log('Valid List.'))
+  .catch(console.error);
 ```
 
 ## Authoring pair lists
